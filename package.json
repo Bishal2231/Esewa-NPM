@@ -1,0 +1,27 @@
+{
+  "name": "esewajs",
+  "version": "1.0.2",
+  "description": "a normal NPM package to simplify Esewa payment integration",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bishal2231/Esewa-NPM.git"
+  },
+  "keywords": [
+    "Esewa",
+    "bishal",
+    "react",
+    "js",
+    "node",
+    "js"
+  ],
+  "author": "Bishal",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9"
+  }
+}
