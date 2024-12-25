@@ -94,12 +94,14 @@ const EsewaCheckStatus=async(total_amount,transaction_uuid,product_code,ESEWAPAY
 
 
 
-  function base64Decode(base64) {
+function base64Decode(base64) {
     // Convert Base64Url to standard Base64
     const standardBase64 = base64.replace(/-/g, "+").replace(/_/g, "/");
     // Decode Base64 to UTF-8 string
     const decoded = atob(standardBase64);
     return JSON.parse(decoded);
   }
-
-  export {EsewaPaymentGateway,EsewaCheckStatus} 
+   function generateUniqueId() {
+    return `id-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  }
+  export {EsewaPaymentGateway,EsewaCheckStatus,base64Decode,generateUniqueId} 
