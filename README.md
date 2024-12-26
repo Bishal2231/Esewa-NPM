@@ -226,7 +226,8 @@ ESEWAPAYMENT_STATUS_CHECK_URL=https://uat.esewa.com.np/api/epay/transaction/stat
 ### important Note for  ESEWA of .env 
 1. Testing: https://rc-epay.esewa.com.np/api/epay/main/v2/form
 2. Production: https://epay.esewa.com.np/api/epay/main/v2/form
-*for testing locally use  ESEWAPAYMENT_URL= https://rc-epay.esewa.com.np/api/epay/main/v2/form and for production use  ESEWAPAYMENT_URL= https://epay.esewa.com.np/api/epay/main/v2/form    in .env file  *
+3. *for testing locally use  ESEWAPAYMENT_URL= https://rc-epay.esewa.com.np/api/epay/main/v2/form in .env file  *
+4. for production use  ESEWAPAYMENT_URL= https://epay.esewa.com.np/api/epay/main/v2/form    in .env file  *
 
 3. MERCHANT_ID will be provided by esewa ,you should reach out to them
 *Success_URL is for esewa redirect your browser to your custommade sucesspage and if it fail it will redirect to your failure page*
