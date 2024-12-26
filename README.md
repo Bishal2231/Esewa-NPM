@@ -17,7 +17,8 @@
 
 ###  import these on your terminal 
 
-```1. npm install axios
+```
+1. npm install axios
 2. npm i body-parser
 3. npm i dotenv
 4. npm i express
