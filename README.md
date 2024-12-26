@@ -30,12 +30,12 @@
 ## importing the package for Backend Folder ###
 **module.js**
 ```
-import { EsewaPaymentGateway,EsewaCheckStatus } from "esewa";
+import { EsewaPaymentGateway,EsewaCheckStatus } from "esewajs";
 ```
 
 **common.js**
 ```
-const { EsewaPaymentGateway, EsewaCheckStatus } = require('esewa');
+const { EsewaPaymentGateway, EsewaCheckStatus } = require('esewajs');
 ```
 
 ------------------------
@@ -43,12 +43,12 @@ const { EsewaPaymentGateway, EsewaCheckStatus } = require('esewa');
 **module.js**
 
 ```
-import { generateUniqueId,base64Decode } from "esewa";
+import { generateUniqueId,base64Decode } from "esewajs";
 ```
 
 **common.js**
 ```
-const { generateUniqueId,base64Decode } = require('esewa');
+const { generateUniqueId,base64Decode } = require('esewajs');
 ```
 
  #### lets integrete (You can start from here without reading Detail docs tooo 😊😊😊)
@@ -232,7 +232,6 @@ ESEWAPAYMENT_STATUS_CHECK_URL=https://uat.esewa.com.np/api/epay/transaction/stat
 3. MERCHANT_ID will be provided by esewa ,you should reach out to them
 *Success_URL is for esewa redirect your browser to your custommade sucesspage and if it fail it will redirect to your failure page*
 
-now run your program
 **Backend setup complete**
 
 
