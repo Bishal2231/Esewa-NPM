@@ -4,27 +4,7 @@
 ### just read 10-12 line only u will know how to integreate or watch the youtube turtorial for this
 [youtube/animezoneamv](https://www.youtube.com/@animezoneamv7368)
 
-**Transaction Flow**
-1. When user choses eSewa as on-line payment option from partner merchant application, then user is temporarily redirected to eSewa ePay login page.
 
-2. User will provide valid credentials on login page.
-
-3. By confirming the transaction, user is accepting the transaction details sent by partner merchants.
-
-4. After each successful transaction, the user is redirected back to partner merchant's success page. If transaction fails due to any reason (which includes user canceling transaction), the user is informed by appropriate failure message and redirected back to partner merchant's failure page.
-
-5. For every successful transaction, the merchant account is credited accordingly and notified via email/SMS regarding transaction.
-
-6. If a response is not received within five minutes, the status check API can be used to confirm the payment.
-
-7. After receiving a response from the status check API, update the payment status accordingly.
-
-**this is from ESEWA**
-----------------------------------------------------------
-## i will explain to u in short term ##
-1. the Esewa api give LogIn page to us we login/signup to the esewa api and also in esewa Form .give money and OTP and esewa will send reponse
-2. esewa will take amount ,and product ID and give response 
-3.  as always after every transaction user/merchant(owner) will be notified that money is sent/received.
 
 ------------------------
 #### how our NPM package work
@@ -33,7 +13,21 @@
  ```npm i esewajs```
 
 ------------------------------------------------
-## importing the package ###
+
+
+###  import these on your terminal 
+
+```1. npm install axios
+2. npm i body-parser
+3. npm i dotenv
+4. npm i express
+5. npm i mongoose
+6. npm i esewajs
+```
+
+
+---------------------
+## importing the package for Backend Folder ###
 **module.js**
 ```
 import { EsewaPaymentGateway,EsewaCheckStatus } from "esewa";
@@ -44,37 +38,19 @@ import { EsewaPaymentGateway,EsewaCheckStatus } from "esewa";
 const { EsewaPaymentGateway, EsewaCheckStatus } = require('esewa');
 ```
 
------------------------------------------------------
-### how it work
-
-
-```
-const reqPayment=await EsewaPaymentGateway(amount,productDeliveryCharge,productServiceCharge,taxAmount,productId,process.env.MERCHANT_ID,process.env.SECRET,process.env.SUCCESS_URL,process.env.FAILURE_URL,process.env.ESEWAPAYMENT_URL,algorithm,encoding)
-```
-
-**for developement phase  use productDeliveryCharge=0,
-       productServiceCharge=0,
-       taxAmount=0**
-
-       
-### Note
-1. EsewaPaymentGateway return the response 
-2. algorthm is already set to SHA256 u can left it undefined,it will work well
-3. encoding is already set to base64 u can left it undefined it will work well 
-  
-*also work without explictly defining it*
+------------------------
+## importing the package for Frontend Folder ###
 
 ```
-const  reqPayment=await EsewaPaymentGateway(amount,productDeliveryCharge,productServiceCharge,taxAmount,productId,process.env.MERCHANT_ID,process.env.SECRET,process.env.SUCCESS_URL,process.env.FAILURE_URL,process.env.ESEWAPAYMENT_URL,undefined,undefined)
+import { generateUniqueId,base64Decode } from "esewa";
 ```
 
-*if u want to use it explictly u can use it like this *
+**common.js**
 ```
-const  reqPayment=await EsewaPaymentGateway(amount,productDeliveryCharge,productServiceCharge,taxAmount,productId,process.env.MERCHANT_ID,process.env.SECRET,process.env.SUCCESS_URL,process.env.FAILURE_URL,process.env.ESEWAPAYMENT_URL,"sha256","base64")
+const { generateUniqueId,base64Decode } = require('esewa');
 ```
-        * as esewa use sha256 algorithm  and base64 for encoding*
 
- #### lets integrete (u can start from here without reading docs tooo 😊😊😊)
+ #### lets integrete (You can start from here without reading Detaildocs tooo 😊😊😊)
   0. step :0 folder setup
   **project- ROOT DIRECTORY**
 ![root structure](root.png)
@@ -124,17 +100,7 @@ app.listen(PORT, () => {
 
 
 ---------
-###  import these on your terminal 
 
-```1. npm install axios
-2. npm i body-parser
-3. npm i dotenv
-4. npm i express
-5. npm i mongoose
-6. npm i esewajs
-```
-
-------
  *DB /  db.config.js*
 
   ```
@@ -448,6 +414,71 @@ function App() {
 export default App;
 ```
 **congrats u made a Esewa payment integration**
+**You can read More detail docs if u want**
+**Transaction Flow**
+1. When user choses eSewa as on-line payment option from partner merchant application, then user is temporarily redirected to eSewa ePay login page.
+
+2. User will provide valid credentials on login page.
+
+3. By confirming the transaction, user is accepting the transaction details sent by partner merchants.
+
+4. After each successful transaction, the user is redirected back to partner merchant's success page. If transaction fails due to any reason (which includes user canceling transaction), the user is informed by appropriate failure message and redirected back to partner merchant's failure page.
+
+5. For every successful transaction, the merchant account is credited accordingly and notified via email/SMS regarding transaction.
+
+6. If a response is not received within five minutes, the status check API can be used to confirm the payment.
+
+7. After receiving a response from the status check API, update the payment status accordingly.
+
+**this is from ESEWA**
+----------------------------------------------------------
+## i will explain to u in short term ##
+1. the Esewa api give LogIn page to us we login/signup to the esewa api and also in esewa Form .give money and OTP and esewa will send reponse
+2. esewa will take amount ,and product ID and give response 
+3.  as always after every transaction user/merchant(owner) will be notified that money is sent/received.
+
+-----------------------------------------------------
+### how it work
+
+
+```
+const reqPayment=await EsewaPaymentGateway(amount,productDeliveryCharge,productServiceCharge,taxAmount,productId,process.env.MERCHANT_ID,process.env.SECRET,process.env.SUCCESS_URL,process.env.FAILURE_URL,process.env.ESEWAPAYMENT_URL,algorithm,encoding)
+```
+
+**for developement phase  use productDeliveryCharge=0,
+       productServiceCharge=0,
+       taxAmount=0**
+
+       
+### Note
+1. EsewaPaymentGateway return the response  which is from the Esewa
+2. algorthm is already set to SHA256 u can left it undefined,it will work well
+3. encoding is already set to base64 u can left it undefined it will work well 
+  
+*also work without explictly defining it*
+
+```
+const  reqPayment=await EsewaPaymentGateway(amount,productDeliveryCharge,productServiceCharge,taxAmount,productId,process.env.MERCHANT_ID,process.env.SECRET,process.env.SUCCESS_URL,process.env.FAILURE_URL,process.env.ESEWAPAYMENT_URL,undefined,undefined)
+```
+
+*if u want to use it explictly u can use it like this *
+```
+const  reqPayment=await EsewaPaymentGateway(amount,productDeliveryCharge,productServiceCharge,taxAmount,productId,process.env.MERCHANT_ID,process.env.SECRET,process.env.SUCCESS_URL,process.env.FAILURE_URL,process.env.ESEWAPAYMENT_URL,"sha256","base64")
+```
+        * as esewa use sha256 algorithm  and base64 for encoding*
+
+
+## You might wonder why there is 2 function in the Backend as the payment integration should have 1 functio 
+*the EsewaPaymentGateway function  helps the browser to redirect to the esewa payment gateway and then help in transaction flow*
+*the  EsewaCheckStatus function is used to check if the payment is done or not by providing the product code to the esewa server  *
 
 
 
+## You might also wonder why there is 2 function in the Frontend too
+*the generateUniqueId function helps to generate a unique id for the product so that esewa will accept it as product id and amount is send directly*
+*the base64Decode function is use to decode the informatin as if the payment is successful esewa redirect us to the success_url as we have in .env file as we proviude in function too *
+await   EsewaPaymentGateway(amount,productDeliveryCharge,productServiceCharge,taxAmount,transaction_uuid,
+  product_code,SECRET,success_url,failure_url,ESEWAPAYMENT_URL,algorithm,encoding)
+
+## info about the algorithm and encoding  
+*we use algorithm and encoding as undefined in the doc  because when u left it undefined by default it will take algorithm and encoding of Esewa i.e. hsa256 and base64*
