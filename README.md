@@ -10,11 +10,33 @@
 #### how our NPM package work
 
 ## install in terminal
- ```npm i esewajs```
+ ```
+ npm i esewajs
+ ```
 
 ------------------------------------------------
+## initialize Integration
+```
+import { EsewaPaymentGateway } from "esewajs";
 
 
+await   EsewaPaymentGateway(amount,productDeliveryCharge,productServiceCharge,taxAmount,transaction_uuid,
+  product_code,SECRET,success_url,failure_url,ESEWAPAYMENT_URL,undefined,undefined)
+```
+
+**there is 2 undefined first one is for algorithm which is set to sha256 by default as esewa use it and another is encoding which is set to base64 by default || as u can write it explictly too**
+
+### the EsewaCheckStatus is used to check if payment is successfull or unsuccessful
+```
+import { EsewaCheckStatus } from "esewajs";
+
+await  EsewaCheckStatus(total_amount,transaction_uuid,product_code,ESEWAPAYMENT_STATUS_CHECK_URL)
+
+```
+
+--------------
+# step by step on how to use the package
+---------
 ###  import these on your terminal 
 
 ```
