@@ -40,6 +40,7 @@ const { EsewaPaymentGateway, EsewaCheckStatus } = require('esewa');
 
 ------------------------
 ## importing the package for Frontend Folder ###
+**module.js**
 
 ```
 import { generateUniqueId,base64Decode } from "esewa";
@@ -50,14 +51,13 @@ import { generateUniqueId,base64Decode } from "esewa";
 const { generateUniqueId,base64Decode } = require('esewa');
 ```
 
- #### lets integrete (You can start from here without reading Detaildocs tooo 😊😊😊)
+ #### lets integrete (You can start from here without reading Detail docs tooo 😊😊😊)
   0. step :0 folder setup
   **project- ROOT DIRECTORY**
 ![root structure](root.png)
 
   project -Backend folder
 
-  ![alt text](backend.png)
   ![alt text](backendfol.png)
 
 
@@ -223,6 +223,12 @@ ESEWAPAYMENT_URL=https://rc-epay.esewa.com.np/api/epay/main/v2/form
 SECRET=8gBm/:&EnhH.1/q
 ESEWAPAYMENT_STATUS_CHECK_URL=https://uat.esewa.com.np/api/epay/transaction/status/
 ```
+### important Note for  ESEWA of .env 
+1. Testing: https://rc-epay.esewa.com.np/api/epay/main/v2/form
+2. Production: https://epay.esewa.com.np/api/epay/main/v2/form
+*for testing locally use  ESEWAPAYMENT_URL= https://rc-epay.esewa.com.np/api/epay/main/v2/form and for production use  ESEWAPAYMENT_URL= https://epay.esewa.com.np/api/epay/main/v2/form    in .env file  *
+
+3. MERCHANT_ID will be provided by esewa ,you should reach out to them
 *Success_URL is for esewa redirect your browser to your custommade sucesspage and if it fail it will redirect to your failure page*
 
 now run your program
