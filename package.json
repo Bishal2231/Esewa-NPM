@@ -1,6 +1,6 @@
 {
   "name": "esewajs",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "a normal NPM package to simplify Esewa payment integration",
   "main": "index.js",
   "type": "module",
