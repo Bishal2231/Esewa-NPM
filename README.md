@@ -2,7 +2,7 @@
 
 *i know payment integration seem very hard as when i try to integrate it i felt very overwhelmed and reading those whole docs seem very time consuming so i just made a NPM package to simplify this*
 ### just read 10-12 line only u will know how to integreate or watch the youtube turtorial for this
-[youtube/animezoneamv](https://www.youtube.com/@animezoneamv7368)
+[youtube/animezoneamv](https://youtu.be/im10rG7Uvis)
 
 
 
